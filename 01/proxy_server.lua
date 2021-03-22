@@ -19,8 +19,8 @@ local function parseConfig()
   local config = file:read()
   file:close()
   local decode = yaml.decode(config)
-  local encode = yaml.encode(decode)
-  print(encode)
+  -- local encode = yaml.encode(decode)
+  -- print(encode)
   return decode
 end
 
@@ -54,5 +54,3 @@ local server = require('http.server').new(config.proxy.bypass.host, config.proxy
 server:set_router(router)
 
 server:start()
-
-
