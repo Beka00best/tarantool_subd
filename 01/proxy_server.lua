@@ -19,8 +19,8 @@ local function parseConfig()
   local config = file:read()
   file:close()
   local decode = yaml.decode(config)
-  -- local encode = yaml.encode(decode)
-  -- print(encode)
+  local encode = yaml.encode(decode)
+  print(encode)
   return decode
 end
 
@@ -39,9 +39,9 @@ local function handler()
   -- print(requestGET.proto)
   return {
     status = requestGET.status,
-    body = requestGET.body,
     reason = requestGET.reason,
     headers = requestGET.headers,
+    body = requestGET.body,
     proto = requestGET.proto
   }
 end
